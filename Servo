@@ -1,0 +1,32 @@
+#include <Servo.h> //包含舵机库函数
+int Shock=3;//定义碰撞传感器接口
+int val;
+
+Servo myservo;  //创建一个舵机控制对象                      
+
+void setup() 
+{ 
+  pinMode(Shock,INPUT);
+  myservo.attach(9);  // 该舵机由arduino第九脚控制
+} 
+void loop() 
+{ 
+   val=digitalRead(Shock);
+   if(val==0){
+                                                
+    myservo.write(90);        // 指定舵机转向的角度
+    delay(15);    // 等待15ms让舵机到达指定位置
+  
+  }   
+else{
+    
+  {                                
+    myservo.write(180);         // 指定舵机转向的角度 
+    delay(15);                        // 等待15ms让舵机到达指定位置 
+  }
+
+    }
+  
+  }
+ 
+}
